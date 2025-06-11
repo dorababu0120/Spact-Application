@@ -56,11 +56,12 @@ const TaskCard = ({ task }) => {
 
         <div className='w-full border-t border-gray-200 dark:border-gray-700 my-2' />
         <div className='flex items-center justify-between mb-2'>
-          <TaskAssets
-            activities={task?.activities?.length}
-            subTasks={task?.subTasks?.length}
-            assets={task?.assets?.length}
-          />
+        <TaskAssets
+  activities={task?.activities?.length}
+  subTasks={task?.subTasks?.length}
+  assets={task?.assets || []}
+  links={task?.links || []}  // <-- add this line
+/>
 
           <div className='flex flex-row-reverse'>
             {task?.team?.length > 0 &&

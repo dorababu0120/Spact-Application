@@ -293,10 +293,13 @@ const TaskDetail = () => {
               </p>
 
               <div className="flex items-center gap-8 p-4 border-y border-gray-200">
-                <div className="space-x-2">
-                  <span className="font-semibold">Assets :</span>
-                  <span>{task.assets?.length || 0}</span>
-                </div>
+              <div className="space-x-2">
+  <span className="font-semibold">Attachments:</span>
+  <span>
+    {`Files: ${task.assets?.length || 0}, Links: ${task.links?.length || 0}`}
+  </span>
+</div>
+
                 <span className="text-gray-400">|</span>
                 <div className="space-x-2">
                   <span className="font-semibold">Sub-Task :</span>
@@ -357,7 +360,7 @@ const TaskDetail = () => {
               </div>
             </div>
 
-            <div className="w-full md:w-1/2 space-y-3">
+           <div className="w-full md:w-1/2 space-y-3">
               <div className="flex justify-between items-center">
                 <p className="text-lg font-semibold">ASSETS</p>
                 <select
@@ -371,17 +374,37 @@ const TaskDetail = () => {
               </div>
 
               {viewType === "assets" && (
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {task.assets?.map((el, i) => (
-                    <img
-                      key={i}
-                      src={el}
-                      alt={`asset-${i}`}
-                      className="w-full rounded h-auto md:h-44 2xl:h-52 cursor-pointer transition-all duration-700 md:hover:scale-125 hover:z-50"
-                    />
-                  ))}
-                </div>
-              )}
+  <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+    {task.assets?.map((el, i) => {
+      const isPDF = el.toLowerCase().endsWith(".pdf");
+
+      return isPDF ? (
+        <a
+          key={i}
+          href={el}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center justify-center p-4 border border-gray-300 rounded hover:shadow transition bg-white"
+        >
+          <div className="w-16 h-20 flex items-center justify-center bg-red-100 rounded">
+            <span className="text-red-600 font-bold">PDF</span>
+          </div>
+          <p className="mt-2 text-sm text-blue-600 underline text-center break-words">
+            Open PDF
+          </p>
+        </a>
+      ) : (
+        <img
+          key={i}
+          src={el}
+          alt={`asset-${i}`}
+          className="w-full rounded h-auto md:h-44 2xl:h-52 cursor-pointer transition-all duration-700 md:hover:scale-125 hover:z-50"
+        />
+      );
+    })}
+  </div>
+)}
+
 
               {viewType === "links" && (
                 <div className="space-y-2">

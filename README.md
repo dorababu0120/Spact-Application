@@ -1,96 +1,102 @@
-# Fullstack Task Manager (MERN)
+# Spact – Fullstack Todo Task Management Application (MERN)
 
+## Overview
+**Spact** is a web application designed to streamline task management for teams and individuals. Built using the MERN stack (MongoDB, Express.js, React, and Node.js), it offers a user-friendly interface for efficient task assignment, tracking, and collaboration. The platform supports both company-level tasks and personal task management, making it ideal for modern work environments.
 
+## Why/Problem?
+In today’s fast-paced workplaces, managing tasks across teams and individuals can quickly become chaotic. Traditional systems like spreadsheets or messaging apps are not scalable and lack structure. **Spact** solves this by offering a centralized system where all users—admins and regular employees—can manage their tasks clearly and effectively.
 
-# Overview
-The Cloud-Based Task Manager is a web application designed to streamline team task management. Built using the MERN stack (MongoDB, Express.js, React, and Node.js), this platform provides a user-friendly interface for efficient task assignment, tracking, and collaboration. The application caters to administrators and regular users, offering comprehensive features to enhance productivity and organization.
+## Background
+With increasing adoption of remote and hybrid work, tools like **Spact** are essential. It offers an organized interface built on modern web technologies to help teams collaborate better and stay on top of their work. Its MERN-based architecture ensures scalability, while Redux Toolkit, Headless UI, and Tailwind CSS enhance performance and user experience.
 
+---
 
-
-### Why/Problem?
-In a dynamic work environment, effective task management is crucial for team success. Traditional methods of task tracking through spreadsheets or manual systems can be cumbersome and prone to errors. The Cloud-Based Task Manager aims to address these challenges by providing a centralized platform for task management, enabling seamless collaboration and improved workflow efficiency.
-
-
-
-### **Background**:
-With the rise of remote work and dispersed teams, there is a growing need for tools that facilitate effective communication and task coordination. The Cloud-Based Task Manager addresses this need by leveraging modern web technologies to create an intuitive and responsive task management solution. The MERN stack ensures scalability, while the integration of Redux Toolkit, Headless UI, and Tailwind CSS enhances user experience and performance.
-
-
-### 
-## **Admin Features:**
+## Admin Features
 1. **User Management:**
-    - Create admin accounts.
-    - Add and manage team members.
+   - Create admin accounts.
+   - Add and manage team members.
+   - Disable or activate user accounts.
 
 2. **Task Assignment:**
-    - Assign tasks to individual or multiple users.
-    - Update task details and status.
+   - Assign tasks to individual or multiple users.
+   - Attach links, documents, or images (via Cloudinary).
+   - Set priority levels: High, Medium, Normal, Low.
+   - Set task status: Todo, In Progress, Completed.
+   - Choose task deadlines and metadata.
 
-3. **Task Properties:**
-    - Label tasks as todo, in progress, or completed.
-    - Assign priority levels (high, medium, normal, low).
-    - Add and manage sub-tasks.
+3. **Task Management:**
+   - View tasks in both **board view** and **list view**.
+   - Update task details.
+   - Add and manage sub-tasks.
+   - Move tasks to trash or delete permanently.
 
-4. **Asset Management:**
-    - Upload task assets, such as images.
+4. **Personal Task Section:**
+   - Admins can also manage their own **personal tasks**, separate from team tasks.
 
-5. **User Account Control:**
-    - Disable or activate user accounts.
-    - Permanently delete or trash tasks.
+---
 
-
-## **User Features:**
+## User Features
 1. **Task Interaction:**
-    - Change task status (in progress or completed).
-    - View detailed task information.
+   - View tasks assigned by the admin.
+   - Change task status to In Progress or Completed.
+   - Use the **Leave Task** option to opt out of a task assigned by the admin.
 
-2. **Communication:**
-    - Add comments or chat to task activities.
+2. **Personal Task Section:**
+   - Users can manage their own personal task list.
 
+3. **Task Views & Tracking:**
+   - View tasks in list or board formats for better visibility.
 
-## **General Features:**
+---
+
+## General Features
 1. **Authentication and Authorization:**
-    - User login with secure authentication.
-    - Role-based access control.
+   - Secure login using JWT.
+   - Role-based access control.
 
 2. **Profile Management:**
-    - Update user profiles.
+   - Users can update personal information and preferences.
 
 3. **Password Management:**
-    - Change passwords securely.
+   - Secure password change functionality.
 
 4. **Dashboard:**
-    - Provide a summary of user activities.
-    - Filter tasks into todo, in progress, or completed.
+   - Overview of task statuses: Todo, In Progress, Completed.
+   - Priority chart for visual analytics.
+   - List of current tasks and team members.
 
+---
 
+## Technologies Used
 
+### Frontend
+- React (Vite)
+- Redux Toolkit
+- Tailwind CSS
+- Headless UI
+- React Router
+- Axios
+- Chart.js / Recharts
 
-## **Technologies Used:**
-- **Frontend:**
-    - React (Vite)
-    - Redux Toolkit for State Management
-    - Headless UI
-    - Tailwind CSS
+### Backend
+- Node.js with Express.js
+- JWT for authentication
+- Bcrypt for password encryption
+- Mongoose for MongoDB integration
 
+### Other Tools
+- Firebase (for optional auth)
+- Cloudinary (to upload images & PDFs)
+- Postman (for API testing)
 
-- **Backend:**
-    - Node.js with Express.js
-    
-- **Database:**
-    - MongoDB for efficient and scalable data storage.
+---
 
+## Setup Instructions
 
-The Cloud-Based Task Manager is an innovative solution that brings efficiency and organization to task management within teams. By harnessing the power of the MERN stack and modern frontend technologies, the platform provides a seamless experience for both administrators and users, fostering collaboration and productivity.
+### Server Setup
 
-&nbsp;
+#### Environment Variables (`.env`)
 
-## SETUP INSTRUCTIONS
-
-
-# Server Setup
-
-## Environment variables
 First, create the environment variables file `.env` in the server folder. The `.env` file contains the following environment variables:
 
 - MONGODB_URI = `your MongoDB URL`

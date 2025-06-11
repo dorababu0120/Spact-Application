@@ -1,10 +1,5 @@
+import React from "react";
 import { Dialog } from "@headlessui/react";
-import {
-  getDownloadURL,
-  getStorage,
-  ref,
-  uploadBytesResumable,
-} from "firebase/storage";
 import { uploadToCloudinary } from "../../utils/cloudinaryUpload";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -15,7 +10,6 @@ import {
   useUpdateTaskMutation,
 } from "../../redux/slices/api/taskApiSlice";
 import { dateFormatter } from "../../utils";
-import { app } from "/src/utils/firebase.js";
 import Button from "../Button";
 import Loading from "../Loading";
 import ModalWrapper from "../ModalWrapper";
@@ -219,10 +213,10 @@ const uploadFile = async (file) => {
                     className="hidden"
                     id="imgUpload"
                     onChange={handleSelect}
-                    accept=".jpg, .png, .jpeg"
+                    accept=".jpg, .png, "
                     multiple
                   />
-                  <BiImages /> <span>Select Images</span>
+                  <BiImages /> <span>Select Files</span>
                 </label>
 
                 {assets.length > 0 && (
