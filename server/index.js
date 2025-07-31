@@ -19,9 +19,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan("dev"));
+
+// ✅ Corrected CORS Configuration
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001","https://jad-spact-app.netlify.app/"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "http://localhost:5173",
+      "https://jad-spact-app.netlify.app", // ✅ no trailing slash
+    ],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
@@ -35,4 +42,5 @@ app.use("/api", routes);
 app.use(routeNotFound);
 app.use(errorHandler);
 
+// Start server
 app.listen(port, () => console.log(`Server listening on ${port}`));
