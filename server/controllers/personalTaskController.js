@@ -1,5 +1,7 @@
 import PersonalTask from "../models/PersonalTask.js";
 
+
+
 export const getTasks = async (req, res) => {
   try {
     const tasks = await PersonalTask.find({ user: req.user.userId, isTrashed: false });
