@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001","https://jad-spact-app.netlify.app/"],
+    origin: ["http://localhost:3000", "http://localhost:3001","https://jad-spact-app.netlify.app/log-in"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
