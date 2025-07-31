@@ -158,5 +158,4 @@ First, create the environment variables file `.env` in the client folder. The `.
 
 ## 🔗 Live Links
 
-- 🔴 Frontend (React on Vercel): [https://spact-frontend.vercel.app](https://spact-frontend.vercel.app)
-- 🔵 Backend (Node.js on Render): [https://spact-backend.onrender.com](https://spact-backend.onrender.com)
+- 🔴 Frontend (React on Vercel): https://spact-application.vercel.app/
