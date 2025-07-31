@@ -27,7 +27,7 @@ app.use(
       "http://localhost:3000",
       "http://localhost:3001",
       "http://localhost:5173",
-      "https://jad-spact-app.netlify.app", // ✅ no trailing slash
+      "https://spact-application.vercel.app", // ✅ no trailing slash
     ],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
