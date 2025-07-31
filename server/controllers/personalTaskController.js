@@ -1,6 +1,4 @@
-import PersonalTask from "../models/PersonalTask.js";
-
-
+import PersonalTask from '../models/personalTask.js';
 
 export const getTasks = async (req, res) => {
   try {
