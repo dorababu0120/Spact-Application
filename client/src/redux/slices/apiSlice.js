@@ -3,7 +3,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 // ✅ Use environment variable for production deployment
 const API_URL = import.meta.env.VITE_APP_BASE_URL + "/api";
 
-const baseQuery = fetchBaseQuery({ baseUrl: API_URL });
+const baseQuery = fetchBaseQuery({
+  baseUrl: API_URL,
+  credentials: "include", // Include cookies in requests
+});
 
 export const apiSlice = createApi({
   baseQuery,
